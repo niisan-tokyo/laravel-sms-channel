@@ -14,10 +14,20 @@
             "Niisan\\Notification\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests"
+        }
+    },
     "require": {
-        "illuminate/notifications": "^5.8 || ^6.0 || ^7.0 || ^8.0"
+        "illuminate/notifications": "^5.8 || ^6.0 || ^7.0 || ^8.0",
+        "twilio/sdk": "^6.15"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.4"
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
