@@ -66,7 +66,7 @@ class SmsMessage
 
     public function __get($name)
     {
-        if ($this->$name) {
+        if (isset($this->$name)) {
             return $this->$name;
         }
     }
