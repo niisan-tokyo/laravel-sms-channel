@@ -19,14 +19,15 @@ class SmsNotificationServiceProvider extends ServiceProvider
     public function register()
     {
         Notification::resolved(function (ChannelManager $service) {
-            $service->extends('sms', function ($app) {
+            $service->extend('sms', function ($app) {
                 if (config('sms-notification.driver') === 'twilio') {
                     $client = new \Twilio\Rest\Client(
                         config('sms-notification.twilio.sid'),
                         config('sms-notification.twilio.token')
                     );
         
-                    return new Twilio($client);
+                    $twilioclient = new Twilio($client);
+                    return new SmsChannel($twilioclient);
                 }
             });
         });

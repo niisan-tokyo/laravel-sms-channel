@@ -2,7 +2,7 @@
 return [
     'driver' => 'twilio',
 
-    'from' => env('SMS_DEFAULT_FROM', 'null'),
+    'default_from' => env('SMS_DEFAULT_FROM', 'null'),
 
     'twilio' => [
         'sid' => env('TWILIO_SID'),

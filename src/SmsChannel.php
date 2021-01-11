@@ -18,7 +18,7 @@ class SmsChannel
 
     public function send($notifiable, Notification $notification)
     {
-        $message = $notification->toSms();
+        $message = $notification->toSms($notifiable);
         if (!$message->to) {
             if (method_exists($notifiable, 'routeNotificationForSms')) {
                 throw new RuntimeException('A notifiable object must have "routeNotificationForSms" method.');
