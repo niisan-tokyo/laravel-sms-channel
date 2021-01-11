@@ -10,12 +10,9 @@ class Twilio implements SmsClient
 
     private $client;
 
-    public function __construct()
+    public function __construct(Client $client)
     {
-        $this->client = new Client(
-            config('sms-notification.twilio.sid'),
-            config('sms-notification.twilio.token')
-        );
+        $this->client = $client;
     }
     
     /**
@@ -27,7 +24,7 @@ class Twilio implements SmsClient
      */
     public function send(SmsMessage $message): void
     {
-        $this->client->message->create(
+        $this->client->messages->create(
             $message->to,
             [
                 'from' => $message->from,

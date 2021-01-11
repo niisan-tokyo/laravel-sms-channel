@@ -20,12 +20,19 @@
         }
     },
     "require": {
-        "illuminate/notifications": "^5.8 || ^6.0 || ^7.0 || ^8.0",
-        "twilio/sdk": "^6.15"
+        "illuminate/notifications": "^5.8 || ^6.0 || ^7.0 || ^8.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
-        "mockery/mockery": "^1.4"
+        "mockery/mockery": "^1.4",
+        "twilio/sdk": "^6.15"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Niisan\\Notification\\SmsNotificationServiceProvider"
+            ]
+        }
     },
     "scripts": {
         "test": "phpunit"
