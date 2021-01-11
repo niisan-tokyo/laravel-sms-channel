@@ -1,6 +1,6 @@
 <?php
 return [
-    'driver' => 'twilio',
+    'driver' => env('SMS_DRIVER', 'twilio'),
 
     'default_from' => env('SMS_DEFAULT_FROM', 'null'),
 
