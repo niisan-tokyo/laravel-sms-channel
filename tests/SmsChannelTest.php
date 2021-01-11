@@ -17,7 +17,7 @@ class SmsChannelTest extends TestCase
         $message = new SmsMessage;
         $message->to('+81000001111')->body('Test Message')->unicode();
         $notification = Mockery::mock(Notification::class);
-        $notification->allows()->toSms()->andReturn($message);
+        $notification->allows()->toSms(null)->andReturn($message);
 
         $client = Mockery::mock(SmsClient::class);
         $client->allows()->send($message);
