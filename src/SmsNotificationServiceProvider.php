@@ -12,7 +12,7 @@ class SmsNotificationServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/sms-notification.php' => config_path('sms-notification.php'),
+            __DIR__.'/config/sms-notification.php' => config_path('sms-notification.php'),
         ]);
     }
 
