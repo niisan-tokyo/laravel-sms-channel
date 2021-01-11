@@ -31,7 +31,7 @@ class SmsNotificationServiceProvider extends ServiceProvider
 
         Notification::resolved(function (ChannelManager $service) {
             $service->extend('sms', function ($app) {
-                return new SmsChannel($app[SmsClient::class]);
+                return $app[SmsChannel::class];
             });
         });
     }
